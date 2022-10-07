@@ -1,18 +1,22 @@
 <template>
   <div>
     <h1>welcome to here</h1>
-    <Login/>
+    <!-- <Login/> -->
+    <HomeVue/>
   </div>
 
 </template>
 
 <script>
 
-import Login from './views/Login.vue';
+// import Login from './views/Login.vue';
+
+import HomeVue from './views/Home.vue';
 export default {
   name: 'App',
   components: {
-    Login
+    // Login,
+    HomeVue
 }
 }
 </script>
@@ -23,7 +27,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  background-color: #409EFF;
+  color: #f8f8f9;
+  background-color: #606266;
+  height: 100vh;
 }
 </style>
