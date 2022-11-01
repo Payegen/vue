@@ -6,12 +6,12 @@
     <span>aaaa</span>
 </div>
 </template>
-<script>
+<script lang="ts">
 export default {
     name:"InfoList"
 }
 </script>
-<style lang="less">
+<style lang="scss">
 .item-list{
     display: flex;
     width: 80px;

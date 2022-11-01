@@ -1,5 +1,6 @@
 <template>
     <div class="home">
+        <info-card text="hello"></info-card>
         <div class="main-container">
             <div class="left">
                 <Mycard/>
@@ -15,17 +16,19 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import Mycard from '../components/Mycard.vue';
+import InfoCard from '../components/InfoCard.vue';
 export default {
     name: "Home",
     components:{
-        Mycard
+        Mycard,
+        InfoCard
     }
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 .home {
     display: flex;
 }

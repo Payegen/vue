@@ -7,7 +7,7 @@
 
 </template>
 
-<script>
+<script lang="ts">
 
 // import Login from './views/Login.vue';
 
