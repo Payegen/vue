@@ -1,13 +1,13 @@
 <template>
     <div class="home">
-        <info-card text="hello"></info-card>
+        <!-- <info-card text="hello"></info-card> -->
         <div class="main-container">
             <div class="left">
                 <Mycard/>
             </div>
             <div class="mainbox">
                 <div class="barlist">
-                    <info-list v-for="item in 8" :key="item"></info-list>
+                    <info-list v-for="item in 2" :key="item"></info-list>
                 </div>
                 
             </div>
