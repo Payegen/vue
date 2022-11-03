@@ -32,7 +32,7 @@
 
 <script lang='ts' setup>
 import GameContol from './GameControl'
-import {ref,watchEffect} from 'vue'
+import {ref,watchEffect,onMounted,onBeforeUnmount,onUnmounted} from 'vue'
 
     let score = ref(0) ;
     let level = ref(1);
@@ -40,34 +40,29 @@ import {ref,watchEffect} from 'vue'
     let game: GameContol | null;
     
     function begin(){
-        game = new GameContol();
+        if(!game){
+            game = new GameContol();
+        }
+        game = new GameContol()
     }
 
     //监听属性分数
     watchEffect(()=>{
-      score.value =  game!.panel.score
+      score.value =  game?.panel.score as number
     })
-    // @Watch('game.panel.score')
-    // onChanged(val:number,old:number){
-    //     this.score = val
-    // }
-    /**
-     * 等同与
-     * watch:{
-     *      game.panel.score:[
-     *          {
-     *              handler: 'onChanged',
-     *              immediate: false,
-     *              deep: false,    
-     *          }
-     *      ]
-     * }
-     * methods:{
-     *     onChanged(val:number,old:number){} 
-     * }
-     * 
-    */
-
+   
+    onMounted(()=>{
+        console.log('mounted');
+        
+    })
+    onUnmounted(()=>{
+        console.log('卸载之后');
+        
+    })
+    onBeforeUnmount(()=>{
+        console.log('卸载之前');
+        game = null
+    })
 </script>
 
 <style >

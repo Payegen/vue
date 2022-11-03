@@ -1,7 +1,7 @@
 class Panel {
    // score和level用来记录分数和等级
-   score = 0;
-   level = 1;
+   score:number = 0;
+   level:number = 1;
 
    // 分数和等级所在的元素，在构造函数中进行初始化
 //    scoreEle: HTMLElement;

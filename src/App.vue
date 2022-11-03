@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>welcome to here</h1>
+    <h1>欢迎。。</h1>
     <!-- <Login/> -->
     <HomeVue/>
   </div>

@@ -3,13 +3,18 @@
     <div class="cursor-pointer">
         <img src="../assets/logo.png" alt="">
     </div>
-    <span>aaaa</span>
+    <span>{{name}}</span>
 </div>
 </template>
-<script lang="ts">
-export default {
-    name:"InfoList"
-}
+<script lang="ts" setup>
+import { defineProps } from "vue";
+
+defineProps({
+    name:{
+        type:String,
+        default:'?'
+    }
+})
 </script>
 <style lang="scss">
 .item-list{

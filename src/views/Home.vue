@@ -7,24 +7,52 @@
             </div>
             <div class="mainbox">
                 <div class="barlist">
-                    <info-list v-for="item in 2" :key="item"></info-list>
+                    <InfoList v-for="(item,index) in items" 
+                    :key="item.id+index" 
+                    :name="item.name"
+                    @click="openViews(item)"
+                    />
                 </div>
-                
             </div>
-            
+            <el-dialog 
+                v-model="dialogTableVisible"
+                :show-close= false
+                width="90%"
+                :title="currentPath"
+                @close="dialogClose">
+                <router-view></router-view>
+            </el-dialog>
         </div>
     </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import Mycard from '../components/Mycard.vue';
-import InfoCard from '../components/InfoCard.vue';
-export default {
-    name: "Home",
-    components:{
-        Mycard,
-        InfoCard
-    }
+import InfoList from '@/components/InfoList.vue';
+import { ref } from "vue";
+import { useRouter, useRoute } from 'vue-router'
+
+interface routerData {
+    id:string,
+    name:string,
+    path:string
+}
+const router = useRouter()
+let items = ref<Array<routerData>>([{id:'a',name:"贪吃蛇",path:'/snake'},{id:'a',name:"相册",path:'/photo'}])
+let currentPath = ref('')
+
+let dialogTableVisible = ref(false)
+
+function openViews(item:routerData) {
+    console.log(item);
+    currentPath.value = item.name
+    dialogTableVisible.value = true
+    router.push(item.path)
+}
+
+function dialogClose(){
+    console.log(`dialog close`);  
+    router.push('/')
 }
 </script>
 
