@@ -29,6 +29,6 @@ export default {
   text-align: center;
   color: #f8f8f9;
   background-color: #606266;
-  height: 100vh;
+  height: 100%;
 }
 </style>
